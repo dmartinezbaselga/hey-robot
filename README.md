@@ -5,6 +5,10 @@ This repo provides the code of the work for out paper Hey robot! personalizing r
 ## Abstract
 Robot navigation methods allow mobile robots to operate in applications such as warehouses or hospitals. While the environment in which the robot operates imposes requirements on its navigation behavior, most existing methods do not allow the end-user to configure the robot's behavior and priorities, possibly leading to undesirable behavior (e.g., fast driving in a hospital). We propose a novel approach to adapt robot motion behavior based on natural language instructions provided by the end-user. Our zero-shot method uses an existing Visual Language Model to interpret a user text query or an image of the environment. This information is used to generate the cost function and reconfigure the parameters of a Model Predictive Controller, translating the user's instruction to the robot's motion behavior. This allows our method to safely and effectively navigate in dynamic and challenging environments. We extensively evaluate our method's individual components and demonstrate the effectiveness of our method on a ground robot in simulation and real-world experiments, and across a variety of environments and user specifications.
 
+<p align="center">
+  <img src="doc/teaser.png" alt="Teaser" width="400">
+</p>
+
 ## Try it yourself
 ### Assistants Installation
 You will have to set your OpenAI API key in all the files used having:
