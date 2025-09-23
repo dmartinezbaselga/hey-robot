@@ -1,0 +1,58 @@
+vars:
+  - num_experiments: 25
+
+stages:
+
+  collect:
+    matrix:
+      environment:
+        - corridor
+        # # - corridor_with_doors
+        # - office1
+        # # - office2
+        # - open_square
+        # - s_shape
+        # - square_corridor
+      query:
+        - Follow the path.
+        - Follow the path. You are navigating through a hospital.
+        - Follow the path. You are navigating through a factory without humans.
+        - Follow the path. Drive carefully.
+        - Follow the path. Drive quickly.
+        - Follow the path. Try to keep a distance of at least 2m from pedestrians.
+        - Follow the path. Try to keep a distance of at least 1.5m from pedestrians.
+        - Follow the path. Try to keep a distance of at least 1m from pedestrians.
+        - Follow the path. Check your environment using the camera.
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch scenario:="${item.environment}" experiment:="${item.query}" num_experiments:=${num_experiments}
+    # outs:
+    #   - ./data/${item.environment}/${item.query}.json
+  
+  follow_comparison:
+    matrix:
+      environment:
+        - follow_scenario
+      query:
+        - Follow the path.
+        - Follow the nearest pedestrian
+
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch scenario:="${item.environment}" experiment:="${item.query}" num_experiments:=5
+    outs:
+      - ./data/${item.environment}/${item.query}.json
+
+  compare:
+      matrix:
+        environment:
+          - corridor
+          # - corridor_with_doors
+          - office1
+          # - office2
+          - open_square
+          - s_shape
+          - square_corridor
+          - follow_scenario
+      cmd: cd ../jackal_socialsim/scripts/experiments && python3 try.py table ${item.environment}
+      deps:
+        - ../jackal_socialsim/scripts/experiments/try.py
+        - ./data/${item.environment}/
+      outs:
+        - tables/${item.environment}/comparison.tex

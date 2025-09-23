@@ -1,0 +1,119 @@
+schema: '2.0'
+stages:
+  collect@corridor-Follow the path.:
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch
+      scenario:="corridor" experiment:="Follow the path." num_experiments:=100
+  collect@corridor-Follow the path. You are navigating through a hospital.:
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch
+      scenario:="corridor" experiment:="Follow the path. You are navigating through
+      a hospital." num_experiments:=10
+    outs:
+    - path: ./data/corridor/Follow the path. You are navigating through a hospital..json
+      hash: md5
+      md5: 2a0ee816134cd8a8c05e2f11da155940
+      size: 5954750
+  collect@corridor-Follow the path. You are navigating through a factory without humans.:
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch
+      scenario:="corridor" experiment:="Follow the path. You are navigating through
+      a factory without humans." num_experiments:=10
+    outs:
+    - path: ./data/corridor/Follow the path. You are navigating through a factory
+        without humans..json
+      hash: md5
+      md5: af7dd906983c1f65df60ec48ac1498e7
+      size: 3462074
+  collect@corridor-Follow the path. Drive carefully.:
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch
+      scenario:="corridor" experiment:="Follow the path. Drive carefully." num_experiments:=10
+    outs:
+    - path: ./data/corridor/Follow the path. Drive carefully..json
+      hash: md5
+      md5: 036d0f877d403cc96ceb08dfd3eddf62
+      size: 6049081
+  collect@corridor-Reach the goal.:
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch
+      scenario:="corridor" experiment:="Reach the goal." num_experiments:=15
+    outs:
+    - path: ./data/corridor/Reach the goal..json
+      hash: md5
+      md5: 69ff7b319bf343c65c9a2822f646bdf5
+      size: 297
+  collect@office1-Follow the path.:
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch
+      scenario:="office1" experiment:="Follow the path." num_experiments:=15
+    outs:
+    - path: ./data/office1/Follow the path..json
+      hash: md5
+      md5: 2d386af6dae15cbe600e73e0aabbf4ec
+      size: 297
+  collect@open_square-Follow the path.:
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch
+      scenario:="open_square" experiment:="Follow the path." num_experiments:=15
+    outs:
+    - path: ./data/open_square/Follow the path..json
+      hash: md5
+      md5: fc94acca7c766252f1c1ea2df4bb5f13
+      size: 301
+  collect@corridor-Follow the path. Drive quickly.:
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch
+      scenario:="corridor" experiment:="Follow the path. Drive quickly." num_experiments:=10
+    outs:
+    - path: ./data/corridor/Follow the path. Drive quickly..json
+      hash: md5
+      md5: d508a96d2a42a51d572f04bfd775d72e
+      size: 3424935
+  collect@corridor-Follow the path. Try to keep a distance of 1m from pedestrians.:
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch
+      scenario:="corridor" experiment:="Follow the path. Try to keep a distance of
+      1m from pedestrians." num_experiments:=10
+    outs:
+    - path: ./data/corridor/Follow the path. Try to keep a distance of 1m from pedestrians..json
+      hash: md5
+      md5: f925750cf25f9d03a1423f727b3607c4
+      size: 4552084
+  collect@corridor-Follow the path. Try to keep a distance of at least 1m from pedestrians.:
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch
+      scenario:="corridor" experiment:="Follow the path. Try to keep a distance of
+      at least 1m from pedestrians." num_experiments:=10
+    outs:
+    - path: ./data/corridor/Follow the path. Try to keep a distance of at least 1m
+        from pedestrians..json
+      hash: md5
+      md5: d4320f4202024a25ce95c10a34d10bdf
+      size: 5121930
+  follow_comparison@follow_scenario-Follow the path.:
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch
+      scenario:="follow_scenario" experiment:="Follow the path." num_experiments:=5
+    outs:
+    - path: ./data/follow_scenario/Follow the path..json
+      hash: md5
+      md5: 46e9a3aef2c1fd70c66f939cc5807c0c
+      size: 789189
+  follow_comparison@follow_scenario-Follow the nearest pedestrian:
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch
+      scenario:="follow_scenario" experiment:="Follow the nearest pedestrian" num_experiments:=5
+    outs:
+    - path: ./data/follow_scenario/Follow the nearest pedestrian.json
+      hash: md5
+      md5: 5a89ee407917d385072a184dc320321e
+      size: 556850
+  collect@corridor-Follow the path. Try to keep a distance of at least 2m from pedestrians.:
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch
+      scenario:="corridor" experiment:="Follow the path. Try to keep a distance of
+      at least 2m from pedestrians." num_experiments:=10
+    outs:
+    - path: ./data/corridor/Follow the path. Try to keep a distance of at least 2m
+        from pedestrians..json
+      hash: md5
+      md5: 8c3c0c0c5ec3fb2de8ed63a39348a7f9
+      size: 5324570
+  collect@corridor-Follow the path. Try to keep a distance of at least 1.5m from pedestrians.:
+    cmd: source ../../devel/setup.bash && roslaunch hey_robot hey_robot_with_planner.launch
+      scenario:="corridor" experiment:="Follow the path. Try to keep a distance of
+      at least 1.5m from pedestrians." num_experiments:=10
+    outs:
+    - path: ./data/corridor/Follow the path. Try to keep a distance of at least 1.5m
+        from pedestrians..json
+      hash: md5
+      md5: f923ce8a86bbfa48781581cb1e185e2f
+      size: 4853674

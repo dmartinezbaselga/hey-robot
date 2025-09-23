@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node name="hey_robot_node" pkg="hey_robot" type="run_hey_robot.sh" output="screen"/>
+
+</launch>

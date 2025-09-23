@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="scenario" default="corridor"/>
+    <arg name="num_experiments" default="1"/>
+    <!-- <arg name="experiment" default="Go to the goal. Drive carefully"/> -->
+    <arg name="experiment" default="Follow the path."/>
+
+    <node name="hey_robot_node" pkg="hey_robot" type="run_hey_robot.sh" output="screen" args="'$(arg experiment)'"/>
+    
+    <rosparam command="load" file="$(find guidance_planner)/config/params.yaml"/>
+    <param name="clock_frequency" value="20"/>
+
+    <!-- <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure" respawn="false"/> -->
+
+    <node pkg="guidance_planner" type="guidance_server" name="guidance_server" cwd="node" respawn="false" output="screen">
+    </node>
+
+    <rosparam param="condition_check/num_experiments" subst_value="True">$(arg num_experiments)</rosparam>
+    <rosparam param="data_folder" subst_value="True">$(find hey_robot)/data</rosparam>
+
+    <include file="$(find mpc_planner_py)/launch/jackalsimulator_guidance.launch">
+        <arg name="scenario" value="$(arg scenario)"/>
+        <arg name="experiment" value="$(arg experiment)"/>
+        <arg name="silent" value="true"/>
+    </include>
+
+</launch>

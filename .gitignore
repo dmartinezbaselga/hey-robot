@@ -1,0 +1,12 @@
+*.pkl
+prompts/*.txt
+.vscode
+__pycache__
+poetry.lock
+results/*
+
+data/
+figures/
+images/
+tables/
+recorded_audio.wav

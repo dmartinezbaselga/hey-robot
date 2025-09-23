@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "gpt-navigation"
+version = "0.1.0"
+description = ""
+authors = ["oscardegroot <groot.oscar.de@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+openai = "^1.35.14"
+pyyaml = "^6.0.1"
+docutils = "0.16"
+rospkg = "1.5.0"
+pyaudio = "^0.2.14"
+speechrecognition = "^3.10.4"
+casadi = "3.5.5"
+numpy = "1.19.5"
+acados-template = {path = "/acados/interfaces/acados_template", develop = true}
+opencv-python = "3.4.11.45"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
