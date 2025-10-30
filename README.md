@@ -87,3 +87,6 @@ If you use this work in your own research or wish to refer to the paper's result
 ## Bug Reports and Support
 For issues related to the work, please contact:
 - Diego Martinez-Baselga: `diegomartinez@unizar.es`
+
+## Acknowledgements
+This work was supported by grant PID2022-139615OB-I00 funded by MICIU/AEI/10.13039/501100011033 and ERDF/EU, from the Aragon Government/FSE-T45_23R and from the European Union (ERC, INTERACT, 101041863). Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.
